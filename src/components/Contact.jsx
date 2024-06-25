@@ -16,10 +16,10 @@ const Contact = () => {
         }}
         className="flex flex-col py-12 xl:px-0"
       >
-        <div className="container mx-auto px-8">
+        <div className="container mx-auto px-8 xl:px-0">
           <div className="flex flex-col items-center xl:items-start">
             <h2 className="w-full text-2xl font-bold mb-20 text-center lg:text-start">
-              Contact Page
+              {t("contact")}
             </h2>
             <div className="w-full flex-1 flex items-center xl:justify-end mb-8 xl:mb-0">
               <ul className="flex flex-col xl:flex-row gap-10 xl:gap-0 xl:justify-between w-full">

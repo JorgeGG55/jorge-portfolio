@@ -23,7 +23,7 @@ const Home = () => {
               <span className="text-xl">{t("fullStackDeveloper")}</span>
               <h1 className="h1 mb-6">
                 {t("hello")} <br />{" "}
-                <span className="text-secondary w-full text-[45px]">
+                <span className="text-secondary w-full text-[45px] xl:text-8xl">
                   Jorge Gravel
                 </span>
               </h1>

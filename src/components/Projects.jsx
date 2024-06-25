@@ -30,10 +30,10 @@ const Projects = () => {
           <div className="flex flex-col px-8 xl:px-0 xl:flex-row xl:gap-[30px]">
             <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
               <div className="flex flex-col gap-[30px] h-[50%]">
-                <div className="text-8xl leading-none font-extrabold text-o">
+                <div className="text-[5rem] xl:text-8xl leading-none font-extrabold text-o">
                   {project.num}
                 </div>
-                <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-secondary transition-all duration-500 capitalize">
+                <h2 className="text-3xl xl:text[42px] font-bold leading-none text-white group-hover:text-secondary transition-all duration-500 capitalize">
                   {project.category} project
                 </h2>
                 <p className="text-white/60">{project.description}</p>
@@ -72,19 +72,27 @@ const Projects = () => {
                 {projects.map((project, index) => {
                   return (
                     <SwiperSlide key={index}>
-                      <div className="h-[460px] relative group flex justify-center items-center bg-white/60">
-                        <div className="absolute top-0 bottom-0 w-full h-full bg-dark/10 z-10"></div>
-                        <div className="relative w-full h-full">
-                          <img
-                            src={project.image}
-                            alt=""
-                            className="object-cover w-full h-full"
-                          />
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block h-full w-full"
+                      >
+                        <div className="h-[350px] xl:h-[460px] relative group flex justify-center items-center bg-white/60">
+                          <div className="absolute top-0 bottom-0 w-full h-full bg-dark/10 z-10"></div>
+                          <div className="relative w-full h-full">
+                            <img
+                              src={project.image}
+                              alt=""
+                              className="object-cover w-full h-full"
+                            />
+                          </div>
                         </div>
-                      </div>
+                      </a>
                     </SwiperSlide>
                   );
                 })}
+
                 <SliderBtns
                   containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
                   btnStyles="bg-secondary rounded-full hover:bg-secondary-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center trasition-all"
