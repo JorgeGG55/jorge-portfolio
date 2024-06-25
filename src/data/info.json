@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "fa-solid fa-phone",
+    "title": "Phone",
+    "description": "(+34) 661 862 874"
+  },
+  {
+    "icon": "fa-solid fa-envelope",
+    "title": "Email",
+    "description": "jorge.gravel.g@gmail.com"
+  },
+  {
+    "icon": "fab fa-linkedin",
+    "title": "Linkedin",
+    "description": "Jorge Gravel Guzmán"
+  }
+]

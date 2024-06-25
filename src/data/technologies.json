@@ -1,0 +1,12 @@
+[
+  { "name": "HTML5" },
+  { "name": "CSS3" },
+  { "name": "JavaScript" },
+  { "name": "React.js" },
+  { "name": "TypeScript" },
+  { "name": "Node.js" },
+  { "name": "Express.js" },
+  { "name": "Tailwind.css" },
+  { "name": "PHP" },
+  { "name": "MongoDB" }
+]
