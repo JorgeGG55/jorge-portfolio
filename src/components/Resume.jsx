@@ -56,7 +56,7 @@ const Resume = () => {
     >
       <div className="container mx-auto">
         {/* buttons */}
-        <div className="flex flex-col items-center xl:flex-row xl:mt-10 xl:items-start gap-[60px]">
+        <div className="flex flex-col items-center px-8 xl:flex-row xl:mt-10 xl:items-start gap-[60px]">
           <ul className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <li>
               <SectionButton

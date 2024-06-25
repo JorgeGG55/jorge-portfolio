@@ -24,7 +24,7 @@ const Projects = () => {
           opacity: 1,
           transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
         }}
-        className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+        className="min-h-[80vh] flex flex-col justify-center pb-12 xl:px-0"
       >
         <div className="container mx-auto">
           <div className="flex flex-col px-8 xl:px-0 xl:flex-row xl:gap-[30px]">
@@ -37,7 +37,7 @@ const Projects = () => {
                   {project.category} project
                 </h2>
                 <p className="text-white/60">{project.description}</p>
-                <ul className="flex gap-4">
+                <ul className="flex flex-wrap gap-4">
                   {project.stack.map((item, index) => {
                     return (
                       <li key={index} className="text-xl text-secondary">

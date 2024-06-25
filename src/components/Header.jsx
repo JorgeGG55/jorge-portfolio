@@ -10,6 +10,7 @@ const Header = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    document.body.style.overflow = isOpen ? "auto" : "hidden";
   };
 
   const changeLanguage = (lng) => {
@@ -162,7 +163,7 @@ const Header = () => {
             />
           </svg>
         </button>
-        <div className="mt-40 mb-40 text-center text-2xl">
+        <div className="mt-32 mb-14 text-center text-2xl">
           <h1 className="text-white font-semibold text-4xl ml-6">
             Jorge<span className="text-secondary font-bold text-4xl">.</span>
           </h1>
@@ -218,9 +219,12 @@ const Header = () => {
           </li>
         </ul>
         <ul className="flex items-center justify-center">
-          <li className="mt-10 md:mt-0">
+          <li className="mt-20 md:mt-0">
             <button
-              onClick={() => changeLanguage("en")}
+              onClick={() => {
+                changeLanguage("en");
+                toggleMenu();
+              }}
               className={` ${
                 language === "en"
                   ? "text-secondary border-2 rounded-full p-2 border-secondary"
@@ -234,7 +238,10 @@ const Header = () => {
               />
             </button>
             <button
-              onClick={() => changeLanguage("es")}
+              onClick={() => {
+                changeLanguage("es");
+                toggleMenu();
+              }}
               className={`ml-4 ${
                 language === "es"
                   ? "text-secondary border-2 rounded-full p-2 border-secondary"

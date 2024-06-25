@@ -15,7 +15,7 @@ const Home = () => {
         transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
       }}
     >
-      <section className="mt-16 xl:mt-0 h-full px-8 xl:px-60">
+      <section className="mt-2 xl:mt-0 h-full px-8 xl:px-60">
         <div className="container mx-auto h-full">
           <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-24 xl:pb-24">
             {/* Sección Izquierda */}
@@ -23,12 +23,14 @@ const Home = () => {
               <span className="text-xl">{t("fullStackDeveloper")}</span>
               <h1 className="h1 mb-6">
                 {t("hello")} <br />{" "}
-                <span className="text-secondary">Jorge Gravel</span>
+                <span className="text-secondary w-full text-[45px]">
+                  Jorge Gravel
+                </span>
               </h1>
               <p className="max-w-[500px] mb-9 text-white/80">
                 {t("description")}
               </p>
-              <div className="flex flex-col xl:flex-row items-center gap-8">
+              <div className="flex flex-col xl:flex-row items-center gap-8 mb-10 xl:mb-0">
                 <DownloadButton />
                 <div className="mb-8 xl:mb-0">
                   <div className="flex gap-6">
@@ -68,7 +70,7 @@ const Home = () => {
             {/* Sección Derecha */}
             <div className="order-1 xl:order-none mb-8 xl:mb-0">
               <div className="h-full relative">
-                <div className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px]">
+                <div className="w-[250px] h-[250px] xl:w-[498px] xl:h-[498px]">
                   <img
                     src={myImage}
                     alt="Jorge Gravel"
