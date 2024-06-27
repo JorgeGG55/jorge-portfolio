@@ -1,9 +1,7 @@
 /*
 
 - componetizar código
-- añadir animaciones cambio de pagina
 - mejorar contenido de los textos
-- arreglar traducciones
 
 
 */

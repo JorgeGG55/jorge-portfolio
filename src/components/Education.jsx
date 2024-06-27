@@ -14,7 +14,7 @@ const Education = () => {
       <Scrollbar gridClass="grid-cols-1 lg:grid-cols-2">
         <ResumeItem
           year="2023 - 2024"
-          title="Full Stack Web Development Bootcamp"
+          title={t("fullstack")}
           institution="thePower"
         />
         <ResumeItem

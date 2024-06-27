@@ -29,9 +29,9 @@ const Contact = () => {
                       <i className={item.icon}></i>
                     </div>
                     <div className="flex-1">
-                      <p className="text-white/60">{item.title}</p>
+                      <p className="text-white/60">{t(`info.${item.title}`)}</p>
                       <h3 className="text-base xl:text-xl">
-                        {item.description}
+                        {t(`info.${item.title} Description`)}
                       </h3>
                     </div>
                   </li>

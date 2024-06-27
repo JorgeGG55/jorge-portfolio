@@ -14,7 +14,16 @@
   "mySkills": "My skills",
   "projects": "Projects",
   "myProjects": "My projects",
+  "fullstack": "Full Stack Web Development Bootcamp",
   "multiplataform": "HNC - Cross-Plataform Application Development",
   "workingPeriod": "Mar 2023 - Jun 2023",
-  "position": "Web Developer Intern"
+  "position": "Web Developer Intern",
+  "info": {
+    "Phone": "Phone",
+    "Email": "Email",
+    "Linkedin": "LinkedIn",
+    "Phone Description": "(+34) 661 862 874",
+    "Email Description": "jorge.gravel.g@gmail.com",
+    "Linkedin Description": "Jorge Gravel Guzmán"
+  }
 }

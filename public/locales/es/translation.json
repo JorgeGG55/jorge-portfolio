@@ -14,7 +14,16 @@
   "mySkills": "Mis habilidades",
   "projects": "Proyectos",
   "myProjects": "Mis proyectos",
+  "fullstack": "Bootcamp en Desarrollo Web Full Stack",
   "multiplataform": "CFGS - Desarrollo de Aplicaciones Multiplataforma",
   "workingPeriod": "mar 2023 - jun 2023",
-  "position": "Desarrollador web en prácticas"
+  "position": "Desarrollador web en prácticas",
+  "info": {
+    "Phone": "Teléfono",
+    "Email": "Correo Electrónico",
+    "Linkedin": "LinkedIn",
+    "Phone Description": "(+34) 661 862 874",
+    "Email Description": "jorge.gravel.g@gmail.com",
+    "Linkedin Description": "Jorge Gravel Guzmán"
+  }
 }
