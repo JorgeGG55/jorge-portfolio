@@ -1,7 +1,0 @@
-/*
-
-- componetizar código
-- mejorar contenido de los textos
-
-
-*/
