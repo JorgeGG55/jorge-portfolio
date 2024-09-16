@@ -3,9 +3,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 const DownloadButton = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
-  const cvFile = "/cvES.pdf";
+  const cvFile = currentLanguage === "es" ? "/cvES.pdf" : "/cvEN.pdf";
 
   return (
     <a
