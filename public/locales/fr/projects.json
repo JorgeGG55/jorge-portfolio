@@ -2,9 +2,9 @@
   "projects": [
     {
       "num": "01",
-      "category": "proyecto fullstack",
+      "category": "projet fullstack",
       "title": "Web Book",
-      "description": "Biblioteca en línea",
+      "description": "Bibliothèque online",
       "stack": [
         { "name": "React.js" },
         { "name": "Node.js" },
@@ -17,9 +17,9 @@
     },
     {
       "num": "02",
-      "category": "proyecto frontend",
-      "title": "Centro de Juegos",
-      "description": "Web con algunos juegos",
+      "category": "projet frontend",
+      "title": "Centre de Jeux",
+      "description": "Site Web avec quelques jeux",
       "stack": [
         { "name": "React.js" },
         { "name": "Html 5" },
@@ -32,9 +32,9 @@
     },
     {
       "num": "03",
-      "category": "proyecto frontend + API",
-      "title": "Aplicación del Clima",
-      "description": "Web para ver el clima",
+      "category": "projet frontend + API",
+      "title": "Application Météo",
+      "description": "Site Web pour voir la météo",
       "stack": [
         { "name": "React.js" },
         { "name": "Html 5" },
