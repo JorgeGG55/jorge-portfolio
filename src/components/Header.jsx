@@ -106,7 +106,7 @@ const Header = () => {
                 >
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/800px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
-                    alt=""
+                    alt="UK flag"
                     className="w-6 h-6 rounded-full"
                   />
                 </button>
@@ -121,6 +121,20 @@ const Header = () => {
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg/1200px-Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg.png"
                     alt="Spain flag"
+                    className="w-6 h-6 rounded-full"
+                  />
+                </button>
+                <button
+                  onClick={() => changeLanguage("fr")}
+                  className={`ml-4 ${
+                    language === "fr"
+                      ? "text-secondary border-2 rounded-full p-2 border-secondary"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/800px-Flag_of_France.svg.png"
+                    alt="France flag"
                     className="w-6 h-6 rounded-full"
                   />
                 </button>
@@ -233,7 +247,7 @@ const Header = () => {
             >
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/800px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
-                alt=""
+                alt="UK flag"
                 className="w-6 h-6 rounded-full"
               />
             </button>
@@ -251,6 +265,23 @@ const Header = () => {
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg/1200px-Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg.png"
                 alt="Spain flag"
+                className="w-6 h-6 rounded-full"
+              />
+            </button>
+            <button
+              onClick={() => {
+                changeLanguage("fr");
+                toggleMenu();
+              }}
+              className={`ml-4 ${
+                language === "fr"
+                  ? "text-secondary border-2 rounded-full p-2 border-secondary"
+                  : ""
+              }`}
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/800px-Flag_of_France.svg.png"
+                alt="France flag"
                 className="w-6 h-6 rounded-full"
               />
             </button>

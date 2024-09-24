@@ -1,0 +1,29 @@
+{
+  "home": "Accueil",
+  "resume": "Résumé",
+  "contact": "Contact",
+  "fullStackDeveloper": "Développeur Full Stack",
+  "hello": "Bonjour, je suis",
+  "description": "Mon objectif est de créer des expériences utilisateur exceptionnelles, en mettant l'accent sur la conception interactive et la fonctionnalité intuitive.",
+  "downloadCV": "Télécharger le CV",
+  "experience": "Expérience",
+  "myExperience": "Mon expérience",
+  "education": "Éducation",
+  "myEducation": "Mon éducation",
+  "skills": "Compétences",
+  "mySkills": "Mes compétences",
+  "projects": "Projets",
+  "myProjects": "Mes projets",
+  "fullstack": "Bootcamp en Développement Web Full Stack",
+  "multiplataform": "Développement d'Applications Multiplateformes",
+  "workingPeriod": "mars 2023 - juin 2023",
+  "position": "Développeur web stagiaire",
+  "info": {
+    "Phone": "Téléphone",
+    "Email": "Email",
+    "Linkedin": "LinkedIn",
+    "Phone Description": "(+34) 661 862 874",
+    "Email Description": "jorge.gravel.g@gmail.com",
+    "Linkedin Description": "Jorge Gravel Guzmán"
+  }
+}
