@@ -15,11 +15,20 @@ const Header = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setLanguage(lng);
+    localStorage.setItem("language", lng);
   };
 
   useEffect(() => {
+    const savedLanguage = localStorage.getItem("language");
+    if (savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    } else {
+      i18n.changeLanguage("es");
+      localStorage.setItem("language", "es");
+    }
     setLanguage(i18n.language);
-  }, [i18n.language]);
+  }, [i18n]);
 
   return (
     <>

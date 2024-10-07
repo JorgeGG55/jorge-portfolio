@@ -9,6 +9,7 @@
         { "name": "React.js" },
         { "name": "Node.js" },
         { "name": "JavaScript" },
+        { "name": "MongoDB" },
         { "name": "Express.js" }
       ],
       "image": "/images/webbook.jpg",
