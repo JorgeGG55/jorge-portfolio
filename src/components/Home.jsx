@@ -15,15 +15,15 @@ const Home = () => {
         transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
       }}
     >
-      <section className="mt-2 sm:mt-4 xl:mt-0 h-full px-4 sm:px-8 xl:px-60">
-        <div className="container mx-auto h-full">
-          <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-24 xl:pb-24">
+      <section className="mt-2 sm:mt-4 xl:mt-0 h-[80vh] px-4 sm:px-8 xl:px-60">
+        <div className="container mx-auto h-full flex">
+          <div className="flex flex-col xl:flex-row items-center justify-between w-full">
             {/* Sección Izquierda */}
             <div className="text-center xl:text-left order-2 xl:order-none">
               <span className="text-lg sm:text-xl">{t("fullStackDeveloper")}</span>
               <h1 className="h1 mb-4 sm:mb-6">
                 {t("hello")} <br />{" "}
-                <span className="text-secondary w-full text-[35px] sm:text-[45px] xl:text-8xl">
+                <span className="text-secondary w-full text-[35px] sm:text-[45px] 2xl:text-8xl">
                   Jorge Gravel
                 </span>
               </h1>
@@ -70,7 +70,7 @@ const Home = () => {
             {/* Sección Derecha */}
             <div className="order-1 xl:order-none mb-6 sm:mb-8 xl:mb-0">
               <div className="h-full relative">
-                <div className="w-[200px] sm:w-[250px] xl:w-[498px] h-[200px] sm:h-[250px] xl:h-[498px]">
+                <div className="w-[200px] sm:w-[250px] 2xl:w-[498px] h-[200px] sm:h-[250px] 2xl:h-[498px]">
                   <img
                     src={myImage}
                     alt="Jorge Gravel"
