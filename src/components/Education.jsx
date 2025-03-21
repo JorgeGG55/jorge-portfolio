@@ -13,6 +13,11 @@ const Education = () => {
       </h2>
       <Scrollbar gridClass="grid-cols-1 lg:grid-cols-2">
         <ResumeItem
+          year="2025 - 2028"
+          title={t("engineering")}
+          institution="UOC"
+        />
+        <ResumeItem
           year="2023 - 2024"
           title={t("fullstack")}
           institution="thePower"
