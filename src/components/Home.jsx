@@ -48,20 +48,6 @@ const Home = () => {
                     >
                       <i className="fab fa-linkedin-in text-xl sm:text-1xl border border-secondary rounded-full p-1 sm:p-2 text-secondary transition-all duration-500 hover:text-dark hover:bg-secondary"></i>
                     </a>
-                    <a
-                      href="https://youtube.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fab fa-youtube text-xl sm:text-1xl border border-secondary rounded-full p-1 sm:p-2 text-secondary transition-all duration-500 hover:text-dark hover:bg-secondary"></i>
-                    </a>
-                    <a
-                      href="https://twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fab fa-twitter text-xl sm:text-1xl border border-secondary rounded-full p-1 sm:p-2 text-secondary transition-all duration-500 hover:text-dark hover:bg-secondary"></i>
-                    </a>
                   </div>
                 </div>
               </div>
