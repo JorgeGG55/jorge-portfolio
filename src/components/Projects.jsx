@@ -15,6 +15,7 @@ const Projects = () => {
     const loadProjects = async () => {
       const response = await fetch(`/locales/${i18n.language}/projects.json`);
       const data = await response.json();
+
       const visibleProjects = data.projects.filter(
         (project) => project.visible !== false
       );
@@ -27,8 +28,7 @@ const Projects = () => {
   }, [i18n.language]);
 
   const handleSlideChange = (swiper) => {
-    const currentIndex = swiper.activeIndex;
-    setProject(projects[currentIndex]);
+    setProject(projects[swiper.activeIndex]);
   };
 
   if (!project) return <div>Loading...</div>;
@@ -38,30 +38,54 @@ const Projects = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
+        transition: { delay: 0.2, duration: 0.5, ease: "easeIn" }
       }}
       className="min-h-[80vh] flex flex-col justify-center xl:px-60"
     >
       <div className="container mx-auto">
         <div className="flex flex-col px-8 xl:px-0 xl:flex-row xl:gap-[30px]">
+
+          {/* LEFT */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              <div className="text-[5rem] xl:text-8xl leading-none font-extrabold text-o">
+            <div className="flex flex-col gap-[17px] h-[50%]">
+              <div className="text-[5rem] xl:text-7xl font-extrabold text-o">
                 {project.num}
               </div>
-              <h2 className="text-3xl xl:text[42px] font-bold leading-none text-white group-hover:text-secondary transition-all duration-500 capitalize">
-                {t(`${project.category}`)}
+
+              <h2 className="text-3xl xl:text-[43px] font-bold text-white capitalize">
+                {t(project.category)}
               </h2>
-              <p className="text-white/60">{t(`${project.description}`)}</p>
+
+              <p className="text-white/60">
+                {t(project.description)}
+              </p>
+
+              {/* FEATURES */}
+              {project.features && (
+                <div>
+                  <h3 className="text-white font-semibold mb-2">
+                    {i18n.language === "es" ? "Funcionalidades" : "Key features"}
+                  </h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1 text-white/60 text-sm list-disc list-inside">
+                    {project.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+
+                </div>
+              )}
+
               <ul className="flex flex-wrap gap-4">
                 {project.stack.map((item, index) => (
                   <li key={index} className="text-xl text-secondary">
-                    {t(`${item.name}`)}
+                    {item.name}
                     {index !== project.stack.length - 1 && ","}
                   </li>
                 ))}
               </ul>
-              <div className="border border-white/20"></div>
+
+              <div className="border border-white/20" />
+
               <div className="flex items-center gap-4">
                 <Link to={project.live} target="_blank">
                   <div className="flex items-center justify-center w-16 h-16 bg-gray rounded-full">
@@ -76,6 +100,8 @@ const Projects = () => {
               </div>
             </div>
           </div>
+
+          {/* RIGHT */}
           <div className="w-full xl:w-[50%]">
             <Swiper
               spaceBetween={30}
@@ -91,22 +117,21 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="block h-full w-full"
                   >
-                    <div className="h-[350px] xl:h-[460px] relative group flex justify-center items-center bg-white/60">
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-dark/10 z-10"></div>
-                      <div className="relative w-full h-full">
-                        <img
-                          src={project.image}
-                          alt={t(`projects:${project.title}`)}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
+                    <div className="h-[350px] xl:h-[460px] relative group flex justify-center items-center border-2 border-secondary bg-transparent rounded-3xl">
+                      <div className="absolute inset-0 bg-dark/10 z-10"></div>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="object-cover w-full h-full rounded-3xl"
+                      />
                     </div>
                   </a>
                 </SwiperSlide>
               ))}
+
               <SliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-secondary rounded-full hover:bg-secondary-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center trasition-all"
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max"
+                btnStyles="bg-secondary rounded-full hover:bg-secondary-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
               />
             </Swiper>
           </div>

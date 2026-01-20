@@ -8,12 +8,20 @@ import { useTranslation } from "react-i18next";
 const Home = () => {
   const { t, i18n } = useTranslation();
 
+  const [featuredProject, setFeaturedProject] = useState(null);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
   const scrollToFeatured = () => {
     const section = document.getElementById("featured-projects");
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const [featuredProject, setFeaturedProject] = useState(null);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     const loadFeaturedProject = async () => {
@@ -21,14 +29,20 @@ const Home = () => {
         `/locales/${i18n.language}/projects.json`
       );
       const data = await response.json();
-
       setFeaturedProject(data.projects[0]);
     };
 
     loadFeaturedProject();
   }, [i18n.language]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.div
@@ -38,79 +52,85 @@ const Home = () => {
         transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
       }}
     >
+      {/* HERO */}
       <section className="relative mt-2 sm:mt-4 xl:mt-0 h-[80vh] px-4 sm:px-8 xl:px-60">
         <div className="container mx-auto h-full flex">
           <div className="flex flex-col xl:flex-row items-center justify-between w-full">
-            {/* Sección Izquierda */}
+
+            {/* LEFT */}
             <div className="text-center xl:text-left order-2 xl:order-none">
-              <span className="text-lg sm:text-xl">{t("fullStackDeveloper")}</span>
+              <span className="text-lg sm:text-xl">
+                {t("fullStackDeveloper")}
+              </span>
+
               <h1 className="h1 mb-4 sm:mb-6">
-                {t("hello")} <br />{" "}
-                <span className="text-secondary w-full text-[35px] sm:text-[45px] 2xl:text-8xl">
+                {t("hello")} <br />
+                <span className="text-secondary text-[35px] sm:text-[45px] 2xl:text-8xl">
                   Jorge Gravel
                 </span>
               </h1>
+
               <p className="max-w-[400px] sm:max-w-[500px] mb-6 sm:mb-9 text-white/80">
                 {t("description")}
               </p>
+
               <div className="flex flex-col xl:flex-row items-center gap-4 sm:gap-8 mb-6 sm:mb-10 xl:mb-0">
                 <DownloadButton />
-                <div className="mb-6 sm:mb-8 xl:mb-0">
-                  <div className="flex gap-4 sm:gap-6">
-                    <a
-                      href="https://github.com/JorgeGG55"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fab fa-github text-xl sm:text-1xl border border-secondary rounded-full p-1 sm:p-2 text-secondary transition-all duration-500 hover:text-dark hover:bg-secondary"></i>
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/jorge-gravel/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className="fab fa-linkedin-in text-xl sm:text-1xl border border-secondary rounded-full p-1 sm:p-2 text-secondary transition-all duration-500 hover:text-dark hover:bg-secondary"></i>
-                    </a>
-                  </div>
+
+                <div className="flex gap-4 sm:gap-6">
+                  <a
+                    href="https://github.com/JorgeGG55"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-github text-xl border border-secondary rounded-full p-2 text-secondary transition-all hover:text-dark hover:bg-secondary" />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/jorge-gravel/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className="fab fa-linkedin-in text-xl border border-secondary rounded-full p-2 text-secondary transition-all hover:text-dark hover:bg-secondary" />
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Sección Derecha */}
+            {/* RIGHT */}
             <div className="order-1 xl:order-none mb-6 sm:mb-8 xl:mb-0">
-              <div className="h-full relative">
-                <div className="w-[200px] sm:w-[250px] 2xl:w-[498px] h-[200px] sm:h-[250px] 2xl:h-[498px]">
-                  <img
-                    src={myImage}
-                    alt="Jorge Gravel"
-                    className="object-cover rounded-full h-full"
-                  />
-                </div>
+              <div className="w-[200px] sm:w-[250px] 2xl:w-[498px] h-[200px] sm:h-[250px] 2xl:h-[498px]">
+                <img
+                  src={myImage}
+                  alt="Jorge Gravel"
+                  className="object-cover rounded-full h-full"
+                />
               </div>
             </div>
           </div>
         </div>
-        {/* Scroll indicator */}
+
+        {/* SCROLL DOWN */}
         <motion.div
           className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer select-none"
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
           onClick={scrollToFeatured}
         >
           <span className="text-xs sm:text-sm text-white/60 tracking-widest uppercase">
-            {t("featuredTitle")}{" "}{t("featuredTitleHighlight")}
+            {t("featuredTitle")} {t("featuredTitleHighlight")}
           </span>
-          <i className="fa-solid fa-chevron-down text-secondary text-xl sm:text-2xl"></i>
+          <i className="fa-solid fa-chevron-down text-secondary text-xl sm:text-2xl" />
         </motion.div>
-
-
       </section>
+
+      {/* FEATURED PROJECT */}
       <section
         id="featured-projects"
-        className="min-h-screen px-4 sm:px-8 xl:px-60 py-24"
+        className="min-h-screen px-4 sm:px-8 xl:px-60 p-16"
       >
         <div className="container mx-auto">
-          <h2 className="text-3xl xl:text-5xl font-bold text-center mb-16">
+          <h2 className="text-3xl xl:text-5xl font-bold text-center mb-10">
             {t("featuredTitle")}{" "}
             <span className="text-secondary">
               {t("featuredTitleHighlight")}
@@ -118,11 +138,8 @@ const Home = () => {
           </h2>
 
           {featuredProject && (
-            <Link
-              to="/projects"
-              className="group block max-w-5xl mx-auto"
-            >
-              <div className="relative overflow-hidden rounded-2xl">
+            <Link to="/projects" className="group block max-w-5xl mx-auto">
+              <div className="relative overflow-hidden rounded-2xl border-2 border-secondary">
                 <img
                   src={featuredProject.image}
                   alt={featuredProject.title}
@@ -148,10 +165,20 @@ const Home = () => {
         </div>
       </section>
 
-
-
+      {/* SCROLL TO TOP BUTTON */}
+      {showScrollTop && (
+        <motion.button
+          onClick={scrollToTop}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-secondary text-dark flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+        >
+          <i className="fa-solid fa-chevron-up text-xl" />
+        </motion.button>
+      )}
     </motion.div>
-
   );
 };
 

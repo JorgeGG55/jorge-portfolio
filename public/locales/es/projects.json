@@ -5,6 +5,18 @@
       "category": "proyecto fullstack",
       "title": "Web Book",
       "description": "Biblioteca en línea",
+      "features": [
+        "Registro y login de usuarios",
+        "Autenticación mediante JWT",
+        "Contraseñas encriptadas",
+        "Roles de usuario (admin / user)",
+        "Rutas protegidas",
+        "Gestión de favoritos",
+        "Control de stock y préstamos",
+        "Reviews y comentarios",
+        "Búsqueda, filtros y paginación",
+        "Dashboard de usuario"
+      ],
       "stack": [
         { "name": "React.js" },
         { "name": "Node.js" },
@@ -21,13 +33,13 @@
       "category": "proyecto frontend",
       "title": "Centro de Juegos",
       "description": "Web con algunos juegos",
+      "visible": false,
       "stack": [
         { "name": "React.js" },
         { "name": "Html 5" },
         { "name": "Css 3" },
         { "name": "JavaScript" }
       ],
-      "visible": false,
       "image": "/images/gameshub.jpg",
       "live": "https://proyecto-5-games-hub-jorge-gravel.netlify.app/",
       "github": "https://github.com/JorgeGG55/Proyecto-5-Games-Hub"
@@ -37,13 +49,13 @@
       "category": "proyecto frontend + API",
       "title": "Aplicación del Clima",
       "description": "Web para ver el clima",
+      "visible": false,
       "stack": [
         { "name": "React.js" },
         { "name": "Html 5" },
         { "name": "Css 3" },
         { "name": "JavaScript" }
       ],
-      "visible": false,
       "image": "/images/weatherapp.jpg",
       "live": "https://weatherapp-jorge.netlify.app",
       "github": "https://github.com/JorgeGG55/Proyecto-11-react-basics"
