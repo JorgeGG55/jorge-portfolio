@@ -15,8 +15,12 @@ const Projects = () => {
     const loadProjects = async () => {
       const response = await fetch(`/locales/${i18n.language}/projects.json`);
       const data = await response.json();
-      setProjects(data.projects);
-      setProject(data.projects[0]);
+      const visibleProjects = data.projects.filter(
+        (project) => project.visible !== false
+      );
+
+      setProjects(visibleProjects);
+      setProject(visibleProjects[0]);
     };
 
     loadProjects();

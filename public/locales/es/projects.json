@@ -27,6 +27,7 @@
         { "name": "Css 3" },
         { "name": "JavaScript" }
       ],
+      "visible": false,
       "image": "/images/gameshub.jpg",
       "live": "https://proyecto-5-games-hub-jorge-gravel.netlify.app/",
       "github": "https://github.com/JorgeGG55/Proyecto-5-Games-Hub"
@@ -42,6 +43,7 @@
         { "name": "Css 3" },
         { "name": "JavaScript" }
       ],
+      "visible": false,
       "image": "/images/weatherapp.jpg",
       "live": "https://weatherapp-jorge.netlify.app",
       "github": "https://github.com/JorgeGG55/Proyecto-11-react-basics"
