@@ -13,21 +13,22 @@ const Home = () => {
 
   const scrollToFeatured = () => {
     const section = document.getElementById("featured-projects");
-    section?.scrollIntoView({ behavior: "smooth" });
+    if (!section) return;
+
+    const yOffset = 100;
+    const y =
+      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   useEffect(() => {
     const loadFeaturedProject = async () => {
-      const response = await fetch(
-        `/locales/${i18n.language}/projects.json`
-      );
+      const response = await fetch(`/locales/${i18n.language}/projects.json`);
       const data = await response.json();
       setFeaturedProject(data.projects[0]);
     };
@@ -53,8 +54,8 @@ const Home = () => {
       }}
     >
       {/* HERO */}
-      <section className="relative mt-2 sm:mt-4 xl:mt-0 h-[80vh] px-4 sm:px-8 xl:px-60">
-        <div className="container mx-auto h-full flex">
+      <section className="relative h-[70vh] px-4 sm:px-8 xl:px-60">
+        <div className="container mx-auto h-full flex items-center">
           <div className="flex flex-col xl:flex-row items-center justify-between w-full">
 
             {/* LEFT */}
@@ -74,16 +75,16 @@ const Home = () => {
                 {t("description")}
               </p>
 
-              <div className="flex flex-col xl:flex-row items-center gap-4 sm:gap-8 mb-6 sm:mb-10 xl:mb-0">
+              <div className="flex flex-col xl:flex-row items-center gap-4 sm:gap-8">
                 <DownloadButton />
 
-                <div className="flex gap-4 sm:gap-6">
+                <div className="flex gap-6">
                   <a
                     href="https://github.com/JorgeGG55"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-github text-xl border border-secondary rounded-full p-2 text-secondary transition-all hover:text-dark hover:bg-secondary" />
+                    <i className="fab fa-github text-xl border border-secondary rounded-full p-2 text-secondary hover:bg-secondary hover:text-dark transition-all" />
                   </a>
 
                   <a
@@ -91,15 +92,15 @@ const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i className="fab fa-linkedin-in text-xl border border-secondary rounded-full p-2 text-secondary transition-all hover:text-dark hover:bg-secondary" />
+                    <i className="fab fa-linkedin-in text-xl border border-secondary rounded-full p-2 text-secondary hover:bg-secondary hover:text-dark transition-all" />
                   </a>
                 </div>
               </div>
             </div>
 
             {/* RIGHT */}
-            <div className="order-1 xl:order-none mb-6 sm:mb-8 xl:mb-0">
-              <div className="w-[200px] sm:w-[250px] 2xl:w-[498px] h-[200px] sm:h-[250px] 2xl:h-[498px]">
+            <div className="order-1 xl:order-none mb-10 xl:mb-0">
+              <div className="w-[200px] sm:w-[250px] 2xl:w-[480px] h-[200px] sm:h-[250px] 2xl:h-[480px]">
                 <img
                   src={myImage}
                   alt="Jorge Gravel"
@@ -109,28 +110,30 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* SCROLL DOWN */}
+      {/* SCROLL CTA SEPARATOR */}
+      <section className="flex flex-col items-center justify-center">
         <motion.div
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer select-none"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2 cursor-pointer select-none"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut" }}
           onClick={scrollToFeatured}
         >
-          <span className="text-xs sm:text-sm text-white/60 tracking-widest uppercase">
+          <span className="text-xs tracking-widest uppercase text-white/60">
             {t("featuredTitle")} {t("featuredTitleHighlight")}
           </span>
-          <i className="fa-solid fa-chevron-down text-secondary text-xl sm:text-2xl" />
+          <i className="fa-solid fa-chevron-down text-secondary text-2xl" />
         </motion.div>
       </section>
 
       {/* FEATURED PROJECT */}
       <section
         id="featured-projects"
-        className="min-h-screen px-4 sm:px-8 xl:px-60 p-16"
+        className="min-h-screen px-4 sm:px-8 xl:px-60 py-20"
       >
         <div className="container mx-auto">
-          <h2 className="text-3xl xl:text-5xl font-bold text-center mb-10">
+          <h2 className="text-3xl xl:text-5xl font-bold text-center mb-12">
             {t("featuredTitle")}{" "}
             <span className="text-secondary">
               {t("featuredTitleHighlight")}
@@ -139,15 +142,13 @@ const Home = () => {
 
           {featuredProject && (
             <Link to="/projects" className="group block max-w-5xl mx-auto">
-              <div className="relative overflow-hidden rounded-2xl border-2 border-secondary">
+              <div className="relative overflow-hidden rounded-2xl border-2 border-white/60">
                 <img
                   src={featuredProject.image}
                   alt={featuredProject.title}
                   className="w-full h-[300px] sm:h-[650px] object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-
                 <div className="absolute inset-0 bg-dark/60 group-hover:bg-dark/40 transition-all duration-500" />
-
                 <div className="absolute bottom-6 left-6 right-6">
                   <span className="text-sm uppercase tracking-widest text-secondary">
                     {t(featuredProject.category)}
@@ -165,13 +166,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SCROLL TO TOP BUTTON */}
+      {/* SCROLL TO TOP */}
       {showScrollTop && (
         <motion.button
           onClick={scrollToTop}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
           transition={{ duration: 0.3 }}
           className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-secondary text-dark flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
         >

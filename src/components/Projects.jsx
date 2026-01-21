@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
-import SliderBtns from "./SliderBtns";
 
 const Projects = () => {
   const { t, i18n } = useTranslation();
+
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -22,14 +25,11 @@ const Projects = () => {
 
       setProjects(visibleProjects);
       setProject(visibleProjects[0]);
+      setActiveIndex(0);
     };
 
     loadProjects();
   }, [i18n.language]);
-
-  const handleSlideChange = (swiper) => {
-    setProject(projects[swiper.activeIndex]);
-  };
 
   if (!project) return <div>Loading...</div>;
 
@@ -43,11 +43,14 @@ const Projects = () => {
       className="min-h-[80vh] flex flex-col justify-center xl:px-60"
     >
       <div className="container mx-auto">
+
+        {/* MAIN CONTENT */}
         <div className="flex flex-col px-8 xl:px-0 xl:flex-row xl:gap-[30px]">
 
           {/* LEFT */}
           <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-[17px] h-[50%]">
+
               <div className="text-[5rem] xl:text-7xl font-extrabold text-o">
                 {project.num}
               </div>
@@ -71,7 +74,6 @@ const Projects = () => {
                       <li key={index}>{feature}</li>
                     ))}
                   </ul>
-
                 </div>
               )}
 
@@ -98,6 +100,7 @@ const Projects = () => {
                   </div>
                 </Link>
               </div>
+
             </div>
           </div>
 
@@ -106,36 +109,80 @@ const Projects = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              onSlideChange={handleSlideChange}
-              className="xl:h-[520px] mb-12"
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              onSlideChange={(swiper) => {
+                setActiveIndex(swiper.activeIndex);
+                setProject(projects[swiper.activeIndex]);
+              }}
+              className="xl:h-[520px]"
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index}>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block h-full w-full"
-                  >
-                    <div className="h-[350px] xl:h-[460px] relative group flex justify-center items-center border-2 border-secondary bg-transparent rounded-3xl">
-                      <div className="absolute inset-0 bg-dark/10 z-10"></div>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="object-cover w-full h-full rounded-3xl"
-                      />
-                    </div>
-                  </a>
+                  <div className="h-[350px] xl:h-[460px] relative group flex justify-center items-center border-2 border-secondary bg-transparent rounded-3xl">
+
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute inset-0 z-20"
+                    >
+                      <span className="sr-only">Open project</span>
+                    </a>
+
+                    <div className="absolute inset-0 bg-dark/10 z-10 rounded-3xl"></div>
+
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="object-cover w-full h-full rounded-3xl"
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
-
-              <SliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max"
-                btnStyles="bg-secondary rounded-full hover:bg-secondary-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
-              />
             </Swiper>
           </div>
+
         </div>
+
+        {/* PROJECT NAVIGATION – FULL WIDTH + EXTRA */}
+        <div className="mt-12 pt-6 border-t border-white/10 px-8 xl:px-0 flex items-center justify-between text-sm xl:text-base text-white/70">
+
+          {/* PREVIOUS */}
+          {activeIndex > 0 ? (
+            <button
+              onClick={() => swiperRef.current.slidePrev()}
+              className="hover:text-secondary transition"
+            >
+              ← Anterior proyecto
+            </button>
+          ) : (
+            <div />
+          )}
+
+          {/* CENTER */}
+          <div className="text-center text-white/80">
+            <span className="font-semibold">
+              {activeIndex + 1}/{projects.length}
+            </span>
+            {" — "}
+            <span className="capitalize hidden xl:inline">
+              {project.title}
+            </span>
+          </div>
+
+          {/* NEXT */}
+          {activeIndex < projects.length - 1 ? (
+            <button
+              onClick={() => swiperRef.current.slideNext()}
+              className="hover:text-secondary transition"
+            >
+              Siguiente proyecto →
+            </button>
+          ) : (
+            <div />
+          )}
+        </div>
+
       </div>
     </motion.div>
   );
