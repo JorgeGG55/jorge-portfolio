@@ -35,7 +35,6 @@ const Header = () => {
     <>
       <header className="py-8 px-8 xl:py-12 xl:px-60 text-white">
         <div className="container mx-auto flex justify-between items-center">
-          {/* LOGO */}
           <Link
             to="/"
             onClick={() =>
@@ -50,8 +49,6 @@ const Header = () => {
               Jorge<span className="text-secondary font-bold text-4xl">.</span>
             </h1>
           </Link>
-
-          {/* MOBILE BUTTON */}
           <button
             className="block md:hidden text-secondary focus:outline-none"
             onClick={toggleMenu}
@@ -70,8 +67,6 @@ const Header = () => {
               />
             </svg>
           </button>
-
-          {/* DESKTOP NAV */}
           <nav className="hidden md:block">
             <ul className="md:flex items-center md:space-x-8 text-lg">
               <li>
@@ -85,8 +80,8 @@ const Header = () => {
                     })
                   }
                   className={`hover:text-secondary ${location.pathname === "/"
-                      ? "text-secondary border-b-2 border-secondary"
-                      : ""
+                    ? "text-secondary border-b-2 border-secondary"
+                    : ""
                     }`}
                 >
                   {t("home")}
@@ -104,8 +99,8 @@ const Header = () => {
                     })
                   }
                   className={`hover:text-secondary ${location.pathname === "/resume"
-                      ? "text-secondary border-b-2 border-secondary"
-                      : ""
+                    ? "text-secondary border-b-2 border-secondary"
+                    : ""
                     }`}
                 >
                   {t("resume")}
@@ -123,8 +118,8 @@ const Header = () => {
                     })
                   }
                   className={`hover:text-secondary ${location.pathname === "/projects"
-                      ? "text-secondary border-b-2 border-secondary"
-                      : ""
+                    ? "text-secondary border-b-2 border-secondary"
+                    : ""
                     }`}
                 >
                   {t("projects")}
@@ -146,14 +141,12 @@ const Header = () => {
                   {t("contact")}
                 </Link>
               </li>
-
-              {/* LANGUAGE */}
               <li>
                 <button
                   onClick={() => changeLanguage("en")}
                   className={`ml-4 ${language === "en"
-                      ? "text-secondary border-2 rounded-full p-2 border-secondary"
-                      : ""
+                    ? "text-secondary border-2 rounded-full p-2 border-secondary"
+                    : ""
                     }`}
                 >
                   <img
@@ -166,8 +159,8 @@ const Header = () => {
                 <button
                   onClick={() => changeLanguage("es")}
                   className={`ml-4 ${language === "es"
-                      ? "text-secondary border-2 rounded-full p-2 border-secondary"
-                      : ""
+                    ? "text-secondary border-2 rounded-full p-2 border-secondary"
+                    : ""
                     }`}
                 >
                   <img
@@ -181,15 +174,11 @@ const Header = () => {
           </nav>
         </div>
       </header>
-
-      {/* OVERLAY */}
       <div
         className={`fixed top-0 left-0 w-full h-full bg-dark bg-opacity-70 z-40 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         onClick={toggleMenu}
       />
-
-      {/* MOBILE MENU */}
       <div
         className={`fixed top-0 right-0 h-full w-9/12 bg-primary shadow-lg transform ${isOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 z-50`}
@@ -213,8 +202,8 @@ const Header = () => {
                   toggleMenu();
                 }}
                 className={`hover:text-secondary ${location.pathname === path
-                    ? "text-secondary border-b-2 border-secondary"
-                    : ""
+                  ? "text-secondary border-b-2 border-secondary"
+                  : ""
                   }`}
               >
                 {t(label)}

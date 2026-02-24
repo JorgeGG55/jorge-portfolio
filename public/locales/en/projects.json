@@ -2,7 +2,38 @@
   "projects": [
     {
       "num": "01",
-      "category": "fullstack project",
+      "category": "Fintrack",
+      "title": "FinTrack",
+      "description": "Personal finance management application",
+      "features": [
+        "Complete authentication (register, login, password recovery)",
+        "Automatic generation of realistic demo data with AI",
+        "Interactive dashboard with charts (Recharts)",
+        "Transaction management (income and expenses)",
+        "Budget system by category",
+        "Financial statistics and analysis",
+        "Email service (welcome, password recovery)",
+        "Pre-generated data for instant onboarding",
+        "Responsive design with Tailwind CSS"
+      ],
+      "stack": [
+        { "name": "React.js" },
+        { "name": "Node.js" },
+        { "name": "Express.js" },
+        { "name": "MongoDB" },
+        { "name": "Tailwind CSS" },
+        { "name": "JWT" },
+        { "name": "Brevo API" },
+        { "name": "OpenAI API" }
+      ],
+      "image": "/images/fintrack.jpg",
+      "live": "https://fintrack2-app.vercel.app/",
+      "githubFront": "https://github.com/JorgeGG55/fintrack-frontend",
+      "githubBack": "https://github.com/JorgeGG55/fintrack-backend"
+    },
+    {
+      "num": "02",
+      "category": "Web Book",
       "title": "Web Book",
       "description": "Online library",
       "features": [
@@ -25,40 +56,9 @@
         { "name": "Express.js" }
       ],
       "image": "/images/webbook.jpg",
-      "live": "https://proyecto-13-front.vercel.app/",
-      "github": "https://github.com/JorgeGG55/Proyecto-13-Front"
-    },
-    {
-      "num": "02",
-      "category": "frontend project",
-      "title": "Games Hub",
-      "description": "Web with a few games",
-      "visible": false,
-      "stack": [
-        { "name": "React.js" },
-        { "name": "Html 5" },
-        { "name": "Css 3" },
-        { "name": "JavaScript" }
-      ],
-      "image": "/images/gameshub.jpg",
-      "live": "https://proyecto-5-games-hub-jorge-gravel.netlify.app/",
-      "github": "https://github.com/JorgeGG55/Proyecto-5-Games-Hub"
-    },
-    {
-      "num": "03",
-      "category": "frontend + API project",
-      "title": "Weather App",
-      "description": "Web to see the weather",
-      "visible": false,
-      "stack": [
-        { "name": "React.js" },
-        { "name": "Html 5" },
-        { "name": "Css 3" },
-        { "name": "JavaScript" }
-      ],
-      "image": "/images/weatherapp.jpg",
-      "live": "https://weatherapp-jorge.netlify.app",
-      "github": "https://github.com/JorgeGG55/Proyecto-11-react-basics"
+      "live": "https://webbookapp.vercel.app/",
+      "githubFront": "https://github.com/JorgeGG55/webbook-frontend", 
+      "githubBack": "https://github.com/JorgeGG55/webbook-backend"
     }
   ]
 }

@@ -15,11 +15,10 @@ const SectionButton = ({
   return (
     <button
       onClick={() => setActiveSection(section)}
-      className={`p-3 rounded-lg font-medium w-full inline-flex justify-center ${
-        activeSection === section
+      className={`p-3 rounded-lg font-medium w-full inline-flex justify-center ${activeSection === section
           ? "bg-secondary text-dark"
           : "bg-gray text-white"
-      }`}
+        }`}
     >
       {children}
     </button>
@@ -55,7 +54,6 @@ const Resume = () => {
       className="flex items-center justify-center py-12 xl:py-0 xl:px-60"
     >
       <div className="container mx-auto">
-        {/* buttons */}
         <div className="flex flex-col items-center px-8 xl:px-0 xl:flex-row xl:mt-10 xl:items-start gap-[60px]">
           <ul className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <li>
@@ -87,7 +85,6 @@ const Resume = () => {
             </li>
           </ul>
 
-          {/* content */}
           <div className="flex flex-col w-full max-w-[380px] lg:max-w-full items-center mx-auto xl:mx-0">
             {renderContent()}
           </div>

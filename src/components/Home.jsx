@@ -14,12 +14,9 @@ const Home = () => {
         transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
       }}
     >
-      {/* HERO */}
       <section className="relative h-[80vh] px-4 sm:px-8 xl:px-60">
         <div className="container mx-auto h-full flex items-center">
           <div className="flex flex-col xl:flex-row items-center justify-between w-full">
-
-            {/* LEFT */}
             <div className="text-center xl:text-left order-2 xl:order-none">
               <span className="text-lg sm:text-xl text-white/80">
                 {t("fullStackDeveloper")}
@@ -58,8 +55,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-            {/* RIGHT */}
             <div className="order-1 xl:order-none mb-10 xl:mb-0">
               <div className="w-[200px] sm:w-[250px] 2xl:w-[480px] h-[200px] sm:h-[250px] 2xl:h-[480px]">
                 <img
