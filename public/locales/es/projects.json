@@ -33,6 +33,33 @@
     },
     {
       "num": "02",
+      "category": "Impostor Game",
+      "title": "Impostor",
+      "description": "Juego de fiesta de deducción y engaño para grupos",
+      "features": [
+        "Selección múltiple de categorías con mezcla de palabras",
+        "Asignación dinámica de roles",
+        "Número de jugadores e impostores personalizable",
+        "Sistema de pistas opcional para el impostor",
+        "Flujo de pasar el móvil para revelar roles en secreto",
+        "Imagen automática de Wikipedia para cada palabra secreta",
+        "Configuración persistente entre partidas con sessionStorage",
+        "Diseño responsive mobile-first"
+      ],
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "React.js" },
+        { "name": "TypeScript" },
+        { "name": "MongoDB" },
+        { "name": "Tailwind CSS" },
+        { "name": "Wikipedia API" }
+      ],
+      "image": "/images/impostor.jpg",
+      "live": "https://jugar-impostor.vercel.app/",
+      "github": "https://github.com/JorgeGG55/impostor-game"
+    },
+    {
+      "num": "03",
       "category": "Web Book",
       "title": "Web Book",
       "description": "Biblioteca en línea",

@@ -150,7 +150,7 @@ const Header = () => {
                     }`}
                 >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg/800px-Flag_of_the_United_Kingdom_%283-5%29.svg.png"
+                    src="/images/bandera-reino-unido.png"
                     className="w-6 h-6 rounded-full"
                     alt="EN"
                   />
@@ -164,7 +164,7 @@ const Header = () => {
                     }`}
                 >
                   <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg/1200px-Bandera_de_Espa%C3%B1a_%28sin_escudo%29.svg.png"
+                    src="/images/bandera-espana.png"
                     className="w-6 h-6 rounded-full"
                     alt="ES"
                   />

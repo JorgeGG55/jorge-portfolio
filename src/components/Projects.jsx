@@ -67,30 +67,51 @@ const Projects = () => {
             </div>
             <div className="border border-white/20" />
             <div className="flex items-center gap-4">
-              <div className="flex flex-col items-center gap-0.5">
-                <Link to={project.live} target="_blank">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gray rounded-full hover:bg-white/10 transition">
-                    <i className="fa-solid fa-arrow-up-right-from-square text-lg hover:text-secondary"></i>
-                  </div>
-                </Link>
-                <span className="text-xs text-white/40">Live</span>
-              </div>
-              <div className="flex flex-col items-center gap-0.5">
-                <Link to={project.githubFront} target="_blank">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gray rounded-full hover:bg-white/10 transition">
-                    <i className="fab fa-github text-lg hover:text-secondary"></i>
-                  </div>
-                </Link>
-                <span className="text-xs text-white/40">Front</span>
-              </div>
-              <div className="flex flex-col items-center gap-0.5">
-                <Link to={project.githubBack} target="_blank">
-                  <div className="flex items-center justify-center w-12 h-12 bg-gray rounded-full hover:bg-white/10 transition">
-                    <i className="fab fa-github text-lg hover:text-secondary"></i>
-                  </div>
-                </Link>
-                <span className="text-xs text-white/40">Back</span>
-              </div>
+
+              {project.live && (
+                <div className="flex flex-col items-center gap-0.5">
+                  <Link to={project.live} target="_blank">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gray rounded-full hover:bg-white/10 transition">
+                      <i className="fa-solid fa-arrow-up-right-from-square text-lg hover:text-secondary"></i>
+                    </div>
+                  </Link>
+                  <span className="text-xs text-white/40">Live</span>
+                </div>
+              )}
+
+              {project.githubFront && (
+                <div className="flex flex-col items-center gap-0.5">
+                  <Link to={project.githubFront} target="_blank">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gray rounded-full hover:bg-white/10 transition">
+                      <i className="fab fa-github text-lg hover:text-secondary"></i>
+                    </div>
+                  </Link>
+                  <span className="text-xs text-white/40">Front</span>
+                </div>
+              )}
+
+              {project.githubBack && (
+                <div className="flex flex-col items-center gap-0.5">
+                  <Link to={project.githubBack} target="_blank">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gray rounded-full hover:bg-white/10 transition">
+                      <i className="fab fa-github text-lg hover:text-secondary"></i>
+                    </div>
+                  </Link>
+                  <span className="text-xs text-white/40">Back</span>
+                </div>
+              )}
+
+              {!project.githubFront && !project.githubBack && project.github && (
+                <div className="flex flex-col items-center gap-0.5">
+                  <Link to={project.github} target="_blank">
+                    <div className="flex items-center justify-center w-12 h-12 bg-gray rounded-full hover:bg-white/10 transition">
+                      <i className="fab fa-github text-lg hover:text-secondary"></i>
+                    </div>
+                  </Link>
+                  <span className="text-xs text-white/40">GitHub</span>
+                </div>
+              )}
+
             </div>
           </div>
 
@@ -107,7 +128,7 @@ const Projects = () => {
             >
               {projects.map((project, index) => (
                 <SwiperSlide key={index} className="h-full">
-                  <div className="h-[300px] xl:h-[480px] relative group flex justify-center items-center border-2 border-secondary bg-transparent rounded-3xl overflow-hidden">
+                  <div className="h-[300px] xl:h-[407px] relative group flex justify-center items-center border-2 border-secondary bg-transparent rounded-2xl overflow-hidden">
                     <a href={project.live} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-20">
                       <span className="sr-only">Open project</span>
                     </a>
@@ -115,7 +136,7 @@ const Projects = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="object-cover object-top w-full h-full"
+                      className="object-contain w-full h-full"
                     />
                   </div>
                 </SwiperSlide>

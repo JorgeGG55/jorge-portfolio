@@ -33,6 +33,33 @@
     },
     {
       "num": "02",
+      "category": "Impostor Game",
+      "title": "Impostor",
+      "description": "Party game of deduction and deception for groups",
+      "features": [
+        "Multiple category selection with mixed word pools",
+        "Dynamic role assignment",
+        "Customizable player count and impostor count",
+        "Optional hint system for the impostor",
+        "Pass-the-phone flow for secret role revealing",
+        "Automatic Wikipedia image for each secret word",
+        "Persistent config between games via sessionStorage",
+        "Mobile-first responsive design"
+      ],
+      "stack": [
+        { "name": "Next.js" },
+        { "name": "React.js" },
+        { "name": "TypeScript" },
+        { "name": "MongoDB" },
+        { "name": "Tailwind CSS" },
+        { "name": "Wikipedia API" }
+      ],
+      "image": "/images/impostor.jpg",
+      "live": "https://jugar-impostor.vercel.app/",
+      "github": "https://github.com/JorgeGG55/impostor-game"
+    },
+    {
+      "num": "03",
       "category": "Web Book",
       "title": "Web Book",
       "description": "Online library",
