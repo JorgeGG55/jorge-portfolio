@@ -27,29 +27,29 @@ const Contact = () => {
         transition: { delay: 0.1, duration: 0.4, ease: "easeIn" },
       }}
       aria-labelledby="contact-title"
-      className="min-h-[calc(100vh-180px)] flex items-center px-4 sm:px-8 xl:px-60 py-10"
+      className="xl:min-h-[calc(100vh-180px)] flex items-center px-4 sm:px-6 xl:px-60 py-6 xl:py-10"
     >
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-10 xl:gap-20 items-center">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-20 items-center">
           {/* Left column: heading + CTA */}
-          <div className="flex flex-col gap-5 text-center xl:text-left">
+          <div className="flex flex-col gap-4 xl:gap-5 text-center xl:text-left order-1">
             <div className="flex items-center gap-3 justify-center xl:justify-start">
-              <span className="h-px w-8 bg-secondary" aria-hidden="true" />
-              <span className="uppercase tracking-widest text-secondary text-sm">
+              <span className="h-px w-6 sm:w-8 bg-secondary" aria-hidden="true" />
+              <span className="uppercase tracking-widest text-secondary text-xs sm:text-sm">
                 {t("contact")}
               </span>
             </div>
 
             <h1
               id="contact-title"
-              className="text-3xl sm:text-4xl xl:text-5xl font-bold text-white leading-tight"
+              className="text-2xl sm:text-3xl xl:text-5xl font-bold text-white leading-tight"
             >
               {t("contactHeading")}
             </h1>
 
             <a
               href="mailto:jorge.gravel.g@gmail.com"
-              className="inline-flex items-center justify-center gap-2 self-center xl:self-start mt-2 border border-secondary text-secondary py-3 px-6 rounded-full uppercase tracking-widest text-sm hover:bg-secondary hover:text-dark hover:font-bold transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 self-center xl:self-start mt-1 xl:mt-2 border border-secondary text-secondary py-2.5 sm:py-3 px-5 sm:px-6 rounded-full uppercase tracking-widest text-xs sm:text-sm hover:bg-secondary hover:text-dark hover:font-bold transition-all duration-300"
             >
               <i className="fa-solid fa-paper-plane" aria-hidden="true" />
               <span>{t("sendEmail")}</span>
@@ -57,22 +57,22 @@ const Contact = () => {
           </div>
 
           {/* Right column: contact cards */}
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-3 xl:gap-4 order-2">
             {info.map((item, index) => {
               const href = linkFor(item);
               const external = isExternal(item);
 
               const inner = (
                 <>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-secondary/10 border border-secondary/30 text-secondary rounded-lg flex items-center justify-center text-lg">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 xl:w-14 xl:h-14 shrink-0 bg-secondary/10 border border-secondary/30 text-secondary rounded-lg flex items-center justify-center text-base sm:text-lg">
                     <i className={item.icon} aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-white/50 text-xs sm:text-sm uppercase tracking-wider">
+                    <p className="text-white/50 text-[10px] sm:text-xs xl:text-sm uppercase tracking-wider">
                       {t(`info.${item.title}`)}
                     </p>
                     <p
-                      className={`text-white text-base sm:text-lg truncate ${
+                      className={`text-white text-sm sm:text-base xl:text-lg truncate ${
                         href ? "group-hover:text-secondary transition-colors" : ""
                       }`}
                     >
@@ -81,7 +81,7 @@ const Contact = () => {
                   </div>
                   {href && (
                     <i
-                      className="fa-solid fa-arrow-up-right-from-square text-white/30 group-hover:text-secondary transition-colors"
+                      className="fa-solid fa-arrow-up-right-from-square text-white/30 group-hover:text-secondary transition-colors text-sm"
                       aria-hidden="true"
                     />
                   )}
@@ -94,13 +94,13 @@ const Contact = () => {
                     <a
                       href={href}
                       {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-                      className="group flex items-center gap-5 bg-gray/60 border border-white/5 rounded-xl p-4 sm:p-5 hover:border-secondary/40 hover:bg-gray transition-all duration-300"
+                      className="group flex items-center gap-3 sm:gap-5 bg-gray/60 border border-white/5 rounded-xl p-3 sm:p-4 xl:p-5 hover:border-secondary/40 hover:bg-gray transition-all duration-300"
                       aria-label={`${t(`info.${item.title}`)}: ${t(`info.${item.title} Description`)}`}
                     >
                       {inner}
                     </a>
                   ) : (
-                    <div className="flex items-center gap-5 bg-gray/60 border border-white/5 rounded-xl p-4 sm:p-5">
+                    <div className="flex items-center gap-3 sm:gap-5 bg-gray/60 border border-white/5 rounded-xl p-3 sm:p-4 xl:p-5">
                       {inner}
                     </div>
                   )}

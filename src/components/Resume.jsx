@@ -16,9 +16,10 @@ const SectionButton = ({
   return (
     <button
       onClick={() => setActiveSection(section)}
-      className={`p-3 rounded-lg font-medium w-full inline-flex justify-center ${activeSection === section
+      aria-pressed={activeSection === section}
+      className={`px-3 py-2 xl:p-3 rounded-lg font-medium w-full text-sm sm:text-base inline-flex justify-center transition-colors ${activeSection === section
           ? "bg-secondary text-dark"
-          : "bg-gray text-white"
+          : "bg-gray text-white hover:bg-gray/70"
         }`}
     >
       {children}
@@ -53,12 +54,13 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
       }}
-      className="flex items-center justify-center py-12 xl:py-0 xl:px-60"
+      className="flex items-start justify-center py-4 xl:py-0 xl:px-60"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col items-center px-8 xl:px-0 xl:flex-row xl:mt-10 xl:items-start gap-[60px]">
-          <ul className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <li>
+        <div className="flex flex-col items-stretch px-4 sm:px-6 xl:px-0 xl:flex-row xl:mt-10 xl:items-start gap-5 xl:gap-[60px]">
+          {/* Tabs: row on mobile, column on xl */}
+          <ul className="flex flex-row xl:flex-col w-full xl:max-w-[380px] mx-auto xl:mx-0 gap-2 xl:gap-6">
+            <li className="flex-1">
               <SectionButton
                 section="education"
                 activeSection={activeSection}
@@ -67,7 +69,7 @@ const Resume = () => {
                 {t("education")}
               </SectionButton>
             </li>
-            <li>
+            <li className="flex-1">
               <SectionButton
                 section="experience"
                 activeSection={activeSection}
@@ -76,7 +78,7 @@ const Resume = () => {
                 {t("experience")}
               </SectionButton>
             </li>
-            <li>
+            <li className="flex-1">
               <SectionButton
                 section="skills"
                 activeSection={activeSection}
@@ -87,7 +89,7 @@ const Resume = () => {
             </li>
           </ul>
 
-          <div className="flex flex-col w-full max-w-[380px] lg:max-w-full items-center mx-auto xl:mx-0">
+          <div className="flex flex-col w-full lg:max-w-full items-center mx-auto xl:mx-0">
             {renderContent()}
           </div>
         </div>

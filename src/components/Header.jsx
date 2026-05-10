@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="py-8 px-8 xl:py-12 xl:px-60 text-white">
+      <header className="py-5 px-6 sm:px-8 xl:py-12 xl:px-60 text-white">
         <div className="container mx-auto flex justify-between items-center">
           <Link
             to="/"
@@ -45,12 +45,12 @@ const Header = () => {
               })
             }
           >
-            <h1 className="text-white font-bold text-3xl">
-              Jorge<span className="text-secondary font-bold text-4xl">.</span>
+            <h1 className="text-white font-bold text-2xl sm:text-3xl">
+              Jorge<span className="text-secondary font-bold text-3xl sm:text-4xl">.</span>
             </h1>
           </Link>
           <button
-            className="block md:hidden text-secondary focus:outline-none"
+            className="block md:hidden text-secondary focus:outline-none p-1"
             onClick={toggleMenu}
             aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={isOpen}
@@ -196,10 +196,10 @@ const Header = () => {
         role="dialog"
         aria-label="Menú de navegación"
         aria-hidden={!isOpen}
-        className={`fixed top-0 right-0 h-full w-9/12 bg-primary shadow-lg transform ${isOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-300 z-50`}
+        className={`fixed top-0 right-0 h-full w-9/12 max-w-xs bg-primary shadow-lg transform ${isOpen ? "translate-x-0" : "translate-x-full"
+          } transition-transform duration-300 z-50 flex flex-col`}
       >
-        <ul className="flex flex-col items-center space-y-8 text-lg mt-32">
+        <ul className="flex flex-col items-center space-y-6 text-lg mt-24">
           {[
             { label: "home", path: "/" },
             { label: "resume", path: "/resume" },
@@ -227,6 +227,26 @@ const Header = () => {
             </li>
           ))}
         </ul>
+
+        {/* Language switcher in mobile menu */}
+        <div className="mt-auto mb-10 flex items-center justify-center gap-4">
+          <button
+            onClick={() => changeLanguage("en")}
+            aria-label="Switch language to English"
+            aria-pressed={language === "en"}
+            className={language === "en" ? "border-2 rounded-full p-1 border-secondary" : "p-1"}
+          >
+            <img src="/images/bandera-reino-unido.png" className="w-6 h-6 rounded-full" alt="" aria-hidden="true" />
+          </button>
+          <button
+            onClick={() => changeLanguage("es")}
+            aria-label="Cambiar idioma a español"
+            aria-pressed={language === "es"}
+            className={language === "es" ? "border-2 rounded-full p-1 border-secondary" : "p-1"}
+          >
+            <img src="/images/bandera-espana.png" className="w-6 h-6 rounded-full" alt="" aria-hidden="true" />
+          </button>
+        </div>
       </div>
     </>
   );

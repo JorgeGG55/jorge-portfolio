@@ -16,39 +16,39 @@ const Home = () => {
         transition: { delay: 0.2, duration: 0.5, ease: "easeIn" },
       }}
     >
-      <section className="relative min-h-[calc(100vh-180px)] px-4 sm:px-8 xl:px-60 pt-6 pb-16 xl:pt-10 xl:pb-20">
+      <section className="relative xl:min-h-[calc(100vh-180px)] px-4 sm:px-8 xl:px-60 pt-2 pb-10 xl:pt-10 xl:pb-20">
         <div className="container mx-auto h-full flex items-center">
-          <div className="flex flex-col xl:flex-row items-center justify-between w-full">
+          <div className="flex flex-col xl:flex-row items-center justify-between w-full gap-4 xl:gap-0">
             <div className="text-center xl:text-left order-2 xl:order-none">
-              <span className="text-lg sm:text-xl text-white/80">
+              <span className="text-sm sm:text-lg xl:text-xl text-white/80">
                 {t("fullStackDeveloper")}
               </span>
 
-              <h1 className="h1 mb-4 sm:mb-6">
+              <h1 className="h1 mb-3 sm:mb-4 xl:mb-6 leading-tight">
                 {t("hello")} <br />
-                <span className="text-secondary text-[35px] sm:text-[45px] 2xl:text-8xl">
+                <span className="text-secondary text-[32px] sm:text-[40px] xl:text-[80px] 2xl:text-8xl">
                   Jorge Gravel
                 </span>
               </h1>
 
-              <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full border border-secondary/40 bg-secondary/10">
+              <div className="inline-flex items-center gap-2 mb-4 xl:mb-6 px-3 py-1 rounded-full border border-secondary/40 bg-secondary/10">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                 </span>
-                <span className="text-sm text-secondary font-medium">
+                <span className="text-xs sm:text-sm text-secondary font-medium">
                   {t("availableForWork")}
                 </span>
               </div>
 
-              <p className="max-w-[400px] sm:max-w-[500px] mb-8 text-white/80">
+              <p className="max-w-[400px] sm:max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-8 text-sm sm:text-base text-white/80 leading-relaxed">
                 {t("description")}
               </p>
 
-              <div className="flex flex-col xl:flex-row items-center gap-6">
+              <div className="flex flex-col sm:flex-row xl:flex-row items-center justify-center xl:justify-start gap-4 sm:gap-6">
                 <DownloadButton />
 
-                <div className="flex gap-6">
+                <div className="flex gap-4 sm:gap-6">
                   <a
                     href="https://github.com/JorgeGG55"
                     target="_blank"
@@ -56,7 +56,7 @@ const Home = () => {
                     aria-label="GitHub de Jorge Gravel"
                     title="GitHub"
                   >
-                    <i className="fab fa-github text-xl border border-secondary rounded-full p-2 text-secondary hover:bg-secondary hover:text-dark transition-all" aria-hidden="true" />
+                    <i className="fab fa-github text-lg sm:text-xl border border-secondary rounded-full p-2 text-secondary hover:bg-secondary hover:text-dark transition-all" aria-hidden="true" />
                   </a>
 
                   <a
@@ -66,17 +66,17 @@ const Home = () => {
                     aria-label="LinkedIn de Jorge Gravel"
                     title="LinkedIn"
                   >
-                    <i className="fab fa-linkedin-in text-xl border border-secondary rounded-full p-2 text-secondary hover:bg-secondary hover:text-dark transition-all" aria-hidden="true" />
+                    <i className="fab fa-linkedin-in text-lg sm:text-xl border border-secondary rounded-full p-2 text-secondary hover:bg-secondary hover:text-dark transition-all" aria-hidden="true" />
                   </a>
                 </div>
               </div>
             </div>
-            <div className="order-1 xl:order-none mb-10 xl:mb-0">
-              <div className="w-[200px] sm:w-[250px] 2xl:w-[480px] h-[200px] sm:h-[250px] 2xl:h-[480px]">
+            <div className="order-1 xl:order-none mb-2 xl:mb-0">
+              <div className="w-[140px] sm:w-[200px] xl:w-[420px] 2xl:w-[480px] h-[140px] sm:h-[200px] xl:h-[420px] 2xl:h-[480px]">
                 <img
                   src={myImage}
                   alt="Jorge Gravel"
-                  className="object-cover rounded-full h-full"
+                  className="object-cover rounded-full h-full w-full"
                 />
               </div>
             </div>
@@ -84,7 +84,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - desktop only */}
         <a
           href="#about"
           aria-label={t("aboutMeTitle")}
@@ -99,20 +99,20 @@ const Home = () => {
       <section
         id="about"
         aria-labelledby="about-title"
-        className="px-4 sm:px-8 xl:px-60 pb-20 xl:pb-32"
+        className="px-4 sm:px-8 xl:px-60 pb-12 xl:pb-32"
       >
         <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto bg-gray/40 border border-white/5 rounded-2xl p-6 sm:p-10">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-8 bg-secondary" aria-hidden="true" />
+          <div className="max-w-3xl mx-auto bg-gray/40 border border-white/5 rounded-2xl p-5 sm:p-8 xl:p-10">
+            <div className="flex items-center gap-3 mb-3 sm:mb-4">
+              <span className="h-px w-6 sm:w-8 bg-secondary" aria-hidden="true" />
               <h2
                 id="about-title"
-                className="text-2xl sm:text-3xl font-bold text-white"
+                className="text-xl sm:text-2xl xl:text-3xl font-bold text-white"
               >
                 {t("aboutMeTitle")}
               </h2>
             </div>
-            <div className="flex flex-col gap-4 text-white/75 leading-relaxed">
+            <div className="flex flex-col gap-3 sm:gap-4 text-sm sm:text-base text-white/75 leading-relaxed">
               {t("aboutMe", { returnObjects: true }).map((para, index) => (
                 <p key={index}>{para}</p>
               ))}
