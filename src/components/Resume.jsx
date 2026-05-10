@@ -5,6 +5,7 @@ import Education from "./Education";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Experience from "./Experience";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const SectionButton = ({
   section,
@@ -27,6 +28,7 @@ const SectionButton = ({
 
 const Resume = () => {
   const { t } = useTranslation();
+  useDocumentTitle(t("pageTitles.resume"));
   const [activeSection, setActiveSection] = useState("education");
 
   const renderContent = () => {

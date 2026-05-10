@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 const Projects = () => {
   const { t, i18n } = useTranslation();
+  useDocumentTitle(t("pageTitles.projects"));
 
   const [projects, setProjects] = useState([]);
   const [project, setProject] = useState(null);

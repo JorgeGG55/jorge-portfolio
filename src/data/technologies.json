@@ -1,12 +1,50 @@
 [
-  { "name": "HTML5" },
-  { "name": "CSS3" },
-  { "name": "JavaScript" },
-  { "name": "React.js" },
-  { "name": "TypeScript" },
-  { "name": "Node.js" },
-  { "name": "Express.js" },
-  { "name": "Tailwind.css" },
-  { "name": "PHP" },
-  { "name": "MongoDB" }
+  {
+    "categoryKey": "frontend",
+    "icon": "fa-solid fa-code",
+    "skills": [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Vue.js",
+      "Tailwind CSS"
+    ]
+  },
+  {
+    "categoryKey": "backend",
+    "icon": "fa-solid fa-server",
+    "skills": [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "JWT",
+      "bcrypt"
+    ]
+  },
+  {
+    "categoryKey": "databases",
+    "icon": "fa-solid fa-database",
+    "skills": [
+      "MongoDB",
+      "Mongoose",
+      "SQL"
+    ]
+  },
+  {
+    "categoryKey": "tools",
+    "icon": "fa-solid fa-screwdriver-wrench",
+    "skills": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Vercel",
+      "Postman",
+      "npm",
+      "WordPress",
+      "VS Code"
+    ]
+  }
 ]

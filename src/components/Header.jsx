@@ -52,12 +52,16 @@ const Header = () => {
           <button
             className="block md:hidden text-secondary focus:outline-none"
             onClick={toggleMenu}
+            aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
           >
             <svg
               className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -144,6 +148,9 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => changeLanguage("en")}
+                  aria-label="Switch language to English"
+                  aria-pressed={language === "en"}
+                  title="English"
                   className={`ml-4 ${language === "en"
                     ? "text-secondary border-2 rounded-full p-2 border-secondary"
                     : ""
@@ -152,12 +159,16 @@ const Header = () => {
                   <img
                     src="/images/bandera-reino-unido.png"
                     className="w-6 h-6 rounded-full"
-                    alt="EN"
+                    alt=""
+                    aria-hidden="true"
                   />
                 </button>
 
                 <button
                   onClick={() => changeLanguage("es")}
+                  aria-label="Cambiar idioma a español"
+                  aria-pressed={language === "es"}
+                  title="Español"
                   className={`ml-4 ${language === "es"
                     ? "text-secondary border-2 rounded-full p-2 border-secondary"
                     : ""
@@ -166,7 +177,8 @@ const Header = () => {
                   <img
                     src="/images/bandera-espana.png"
                     className="w-6 h-6 rounded-full"
-                    alt="ES"
+                    alt=""
+                    aria-hidden="true"
                   />
                 </button>
               </li>
@@ -180,6 +192,10 @@ const Header = () => {
         onClick={toggleMenu}
       />
       <div
+        id="mobile-nav"
+        role="dialog"
+        aria-label="Menú de navegación"
+        aria-hidden={!isOpen}
         className={`fixed top-0 right-0 h-full w-9/12 bg-primary shadow-lg transform ${isOpen ? "translate-x-0" : "translate-x-full"
           } transition-transform duration-300 z-50`}
       >

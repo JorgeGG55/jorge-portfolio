@@ -6,6 +6,10 @@ import ResumeItem from "./ResumeItem";
 const Experience = () => {
   const { t } = useTranslation();
 
+  const alebatDetails = t("experienceDetails.alebat", {
+    returnObjects: true,
+  });
+
   return (
     <>
       <h2 className="w-full text-2xl font-bold mb-4 text-center lg:text-start">
@@ -16,6 +20,7 @@ const Experience = () => {
           year={t("workingPeriod")}
           title={t("position")}
           institution="Alebat"
+          details={alebatDetails}
         />
       </Scrollbar>
     </>

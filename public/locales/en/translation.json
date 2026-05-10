@@ -2,9 +2,17 @@
   "home": "Home",
   "resume": "Resume",
   "contact": "Contact",
+  "pageTitles": {
+    "home": "Full Stack Developer",
+    "resume": "Resume",
+    "projects": "Projects",
+    "contact": "Contact",
+    "notFound": "Page not found"
+  },
   "fullStackDeveloper": "Full Stack Developer",
-  "hello": "Hello I'm",
-  "description": "I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.",
+  "hello": "Hello, I'm",
+  "description": "I build full-stack web applications, from the UI to the API and the database. My main stack is React, Next.js, Node.js and MongoDB, with a focus on clean code, responsive design and user experience.",
+  "availableForWork": "Available for work",
   "downloadCV": "Download CV",
   "featuredTitleHighlight": "Project",
   "experience": "Experience",
@@ -15,11 +23,58 @@
   "mySkills": "My skills",
   "projects": "Projects",
   "myProjects": "My projects",
-  "fullstack": "Full Stack Development Bootcamp",
+  "fullstack": "Full Stack Web Development Bootcamp",
   "engineering": "Computer Engineering",
-  "multiplataform": "Cross-Plataform Application Development",
+  "multiplataform": "Cross-Platform Application Development",
+  "engineeringPeriod": "2025 - Present",
+  "fullstackPeriod": "2023 - 2024",
+  "multiplataformPeriod": "2021 - 2023",
   "workingPeriod": "Mar 2024 - Aug 2024",
   "position": "Web Developer Intern",
+  "educationDetails": {
+    "engineering": [
+      "Key subjects: data structures, algorithms, software engineering, networks and databases",
+      "Online format, combined with the development of personal projects",
+      "Focus on software architecture and clean coding best practices"
+    ],
+    "fullstack": [
+      "Intensive employment-focused bootcamp in modern web development",
+      "Stack: HTML, CSS, JavaScript (ES6+), React, Node.js, Express, MongoDB and SQL",
+      "Project-based learning with Agile/Scrum, Git and code reviews",
+      "Deployment of full-stack applications in real-world environments"
+    ],
+    "multiplataform": [
+      "Object-oriented programming with Java and C#",
+      "Android application development (Java/Kotlin) and desktop apps",
+      "Design and querying of SQL and NoSQL databases",
+      "Final integrative project and professional internship in a company"
+    ]
+  },
+  "experienceDetails": {
+    "alebat": [
+      "Built new features on corporate websites using Vue.js",
+      "Maintained and managed content on WordPress-based websites",
+      "Implemented responsive design and performance optimisations to reduce load times",
+      "Bug fixing, code reviews and cross-browser testing with Git/GitLab"
+    ]
+  },
+  "skillCategories": {
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Databases",
+    "tools": "Tools & DevOps"
+  },
+  "notFoundTitle": "Page not found",
+  "notFoundMessage": "The page you're looking for doesn't exist or has been moved. Head back to the homepage and keep exploring.",
+  "backToHome": "Back to home",
+  "contactHeading": "Contact",
+  "sendEmail": "Send email",
+  "aboutMeTitle": "About me",
+  "aboutMe": [
+    "I'm 23, based in Madrid, and I've been studying software development full-time since 2021, combining a Higher Technical Diploma, a bootcamp, and now a Computer Engineering degree at UOC.",
+    "I work mainly with the modern JavaScript stack (React, Next.js, Node.js, Express and MongoDB), with a strong focus on clean code, responsive design and user experience. I designed and built every project in this portfolio end-to-end: frontend, API, database and deployment.",
+    "I speak Spanish (native), English (advanced), Portuguese and French (intermediate). I'm looking for my first opportunity as a Junior Full Stack or Frontend Developer in a team where I can keep learning and contribute from day one."
+  ],
   "info": {
     "Phone": "Phone",
     "Email": "Email",

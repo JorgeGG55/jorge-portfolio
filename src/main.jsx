@@ -11,6 +11,7 @@ const Home = lazy(() => import("./components/Home"));
 const Resume = lazy(() => import("./components/Resume"));
 const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
+const NotFound = lazy(() => import("./components/NotFound"));
 
 ReactGA.initialize("G-2B1Q0STST8");
 
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Router>
